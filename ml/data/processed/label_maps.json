@@ -1,0 +1,34 @@
+{
+  "label_to_idx": {
+    "normal": 0,
+    "crackles": 1,
+    "wheezes": 2,
+    "both": 3
+  },
+  "idx_to_label": {
+    "0": "normal",
+    "1": "crackles",
+    "2": "wheezes",
+    "3": "both"
+  },
+  "diseases": [
+    "COPD",
+    "Healthy",
+    "URTI",
+    "Pneumonia",
+    "Bronchiectasis",
+    "Bronchiolitis",
+    "Asthma",
+    "LRTI"
+  ],
+  "disease_to_idx": {
+    "COPD": 0,
+    "Healthy": 1,
+    "URTI": 2,
+    "Pneumonia": 3,
+    "Bronchiectasis": 4,
+    "Bronchiolitis": 5,
+    "Asthma": 6,
+    "LRTI": 7
+  }
+}

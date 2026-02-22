@@ -1,0 +1,19 @@
+{
+  "architecture": "resnet18_legacy_binary",
+  "backbone": "resnet18",
+  "formulation": "multi-label binary (crackle+wheeze) decoded to 4-class",
+  "best_checkpoint": {
+    "phase": 1,
+    "epoch": 1,
+    "val_acc": 43.02670623145401,
+    "thr_crackle": 0.5,
+    "thr_wheeze": 0.7
+  },
+  "device": "mps",
+  "batch_size": 32,
+  "train_split": "train_aug",
+  "train_samples": 16314,
+  "val_samples": 2022,
+  "crackle_pos_weight": 1.9080213903743315,
+  "wheeze_pos_weight": 2.6156914893617023
+}

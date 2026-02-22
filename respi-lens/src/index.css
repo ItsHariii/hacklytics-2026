@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ── Design System: Solid, Bold, Opinionated ───────────────────────────────── */
+:root {
+  /* 3-4 colors only. No gradients. */
+  --bg: #FAFAF9;
+  --bg-elevated: #FFFFFF;
+  --bg-muted: #F5F5F4;
+  --fg: #0C0A09;
+  --fg-muted: #57534E;
+  --fg-subtle: #A8A29E;
+
+  --primary: #0F766E;
+  --primary-hover: #0D5C56;
+  --primary-light: #CCFBF1;
+  --primary-faint: rgba(15, 118, 110, 0.08);
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --accent-light: #FEF3C7;
+  --border-accent: rgba(15, 118, 110, 0.15);
+
+  /* Semantic (still solid) */
+  --success: #047857;
+  --warning: #B45309;
+  --destructive: #B91C1C;
+
+  --border: #E7E5E4;
+  --border-strong: #A8A29E;
+
+  /* Shape: sharp, deliberate — no pill buttons */
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 8px;
+
+  /* Motion: consistent easing */
+  --ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reduced motion ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Typography Hierarchy ─────────────────────────────────────────────────── */
+.font-display {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-muted);
+}
+
+/* ── Card: Solid, lift on hover ────────────────────────────────────────────── */
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 10, 9, 0.06);
+}
+
+.card-static {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+/* ── Focus states (accessibility) ──────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background 0.15s var(--ease-out), transform 0.1s var(--ease-out);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* ── Classification Badges (solid colors) ──────────────────────────────────── */
+.badge-normal { background: #D1FAE5; color: #047857; border: none; }
+.badge-crackles { background: #FEF3C7; color: #B45309; border: none; }
+.badge-wheezes { background: #FFEDD5; color: #C2410C; border: none; }
+.badge-both { background: #FEE2E2; color: #B91C1C; border: none; }
+
+/* ── Severity (solid) ──────────────────────────────────────────────────────── */
+.severity-low { color: #047857; }
+.severity-moderate { color: #B45309; }
+.severity-high { color: #C2410C; }
+.severity-critical { color: #B91C1C; }
+
+/* ── Drop Zone ─────────────────────────────────────────────────────────────── */
+.drop-zone {
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+}
+
+.drop-zone.active {
+  border-color: var(--primary);
+  border-style: solid;
+  background: rgba(15, 118, 110, 0.05);
+}
+
+/* ── Hero grid pattern (subtle clinical texture) ───────────────────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  opacity: 0.4;
+}
+
+/* ── Link underline hover ──────────────────────────────────────────────────── */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.2s var(--ease-out);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}

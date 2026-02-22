@@ -1,0 +1,13 @@
+{
+  "onnx_path": "ml/models/model_legacy.onnx",
+  "onnx_size_kb": 44412.5234375,
+  "backbone": "resnet18",
+  "legacy": true,
+  "class_diff": null,
+  "crackle_diff": 2.115964889526367e-06,
+  "wheeze_diff": 7.450580596923828e-07,
+  "disease_diff": 1.7285346984863281e-06,
+  "severity_diff": 8.940696716308594e-08,
+  "avg_inference_ms": 11.689788379999957,
+  "p95_inference_ms": 22.34441439999972
+}

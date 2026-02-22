@@ -1,0 +1,69 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Environment & secrets (keep .env.example for templates)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+.env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Node / Frontend
+node_modules/
+.npm
+.yarn-integrity
+.pnpm-debug.log*
+dist/
+dist-ssr/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ML models (large binary files - use Git LFS or cloud storage)
+*.onnx
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# ML data & precomputed features (too large for Git - 100MB+)
+ml/data/features/
+
+# Local / temp
+*.tmp
+*.temp
+.cache/
+storage/

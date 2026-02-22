@@ -1,0 +1,74 @@
+{
+  "formulation": "4-class direct + auxiliary binary",
+  "backbone": "resnet18",
+  "accuracy_4class": 0.5047114252061249,
+  "accuracy_no_tta": 0.5047114252061249,
+  "tta_rounds": 1,
+  "precision_macro": 0.25061214581121105,
+  "recall_macro": 0.30769146703969225,
+  "f1_macro": 0.2713642937489957,
+  "binary_reconstructed_accuracy": 0.3928150765606596,
+  "crackle_detection": {
+    "accuracy": 0.5830388692579506,
+    "precision": 0.4819277108433735,
+    "recall": 0.5899705014749262,
+    "f1": 0.5305039787798409,
+    "auc": 0.6308129446468854
+  },
+  "wheeze_detection": {
+    "accuracy": 0.6813898704358068,
+    "precision": 0.3161592505854801,
+    "recall": 0.3515625,
+    "f1": 0.33292231812577067,
+    "auc": 0.6190484684170472
+  },
+  "severity_mae": 0.24605610966682434,
+  "confusion_matrix": [
+    [
+      628,
+      170,
+      0,
+      0
+    ],
+    [
+      287,
+      229,
+      0,
+      0
+    ],
+    [
+      182,
+      40,
+      0,
+      0
+    ],
+    [
+      137,
+      25,
+      0,
+      0
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.5089141004862237,
+      "recall": 0.7869674185463659,
+      "f1": 0.6181102362204725
+    },
+    "crackles": {
+      "precision": 0.49353448275862066,
+      "recall": 0.4437984496124031,
+      "f1": 0.4673469387755102
+    },
+    "wheezes": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "both": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  }
+}
